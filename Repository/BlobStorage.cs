@@ -7,7 +7,7 @@ namespace StorageAccount.Repository
 {
     public class BlobStorage
     {
-        static string connectionString="DefaultEndpointsProtocol=https;AccountName=priyansustorageacount;AccountKey=ACnbEl+ENaviMpduFDKPmtj8eDHnbKnVMlOXw3tdandIQ3MymSgjNX9taVyV7A2vSTRilCvnOZHb+AStdBPvjA==;EndpointSuffix=core.windows.net";
+        static string connectionString="DefaultEndpointsProtocol=https;AccountName=sampathstorageaccount;AccountKey=2se2PjwF3ljSfTRgkOJEwqOUmSj5hlhIYeicMIUBdaQg/PT8MQkH/7WR/Ox1YUVwV4BRJBw45SwE+AStgSTYUw==;EndpointSuffix=core.windows.net";
         public static async Task CreateBlob(string blobName)
         {
             if(string.IsNullOrEmpty(blobName))
@@ -119,7 +119,7 @@ namespace StorageAccount.Repository
         {
             try
             {
-                string path=@"C:\Users\vmadmin\Downloads\StorageAccount-master\Downloads\"+blobName;
+                string path=@"C:\Users\vmadmin\Desktop\StorageAccount\Downloads\"+blobName;
                 BlobContainerClient container=new BlobContainerClient(connectionString,blobName);
                 BlobClient client=container.GetBlobClient(file);
                 await client.DownloadToAsync(path);
